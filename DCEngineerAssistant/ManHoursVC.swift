@@ -8,11 +8,23 @@
 import UIKit
 
 class ManHoursVC: UIViewController {
-
+    
+    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var equipment: UITextField!
+    @IBOutlet weak var connections: UITextField!
+    
+    @IBOutlet weak var unloading: UISwitch!
+    @IBOutlet weak var mounting: UISwitch!
+    @IBOutlet weak var commutation: UISwitch!
+    @IBOutlet weak var configuration: UISwitch!
+    @IBOutlet weak var dcops: UISwitch!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
 

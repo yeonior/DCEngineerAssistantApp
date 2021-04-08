@@ -51,16 +51,57 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reP-q7-VTU">
+                                <rect key="frame" x="191.66666666666666" y="180" width="30.666666666666657" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 FT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGs-Ll-L3V">
+                                <rect key="frame" x="20" y="112" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFf-NW-0bv">
+                                <rect key="frame" x="0.0" y="335" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ic5-dQ-IN1" id="2Xm-L8-RLY"/>
+                                    <outlet property="delegate" destination="Ic5-dQ-IN1" id="OUJ-bx-Gix"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.3 M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjL-B1-LDe">
+                                <rect key="frame" x="20" y="248" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cBv-1J-6JZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="rjL-B1-LDe" firstAttribute="top" secondItem="cBv-1J-6JZ" secondAttribute="top" constant="248" id="62t-18-F9H"/>
+                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="vGs-Ll-L3V" secondAttribute="trailing" constant="20" id="8EW-Ey-fZS"/>
+                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="oFf-NW-0bv" secondAttribute="trailing" id="B8P-fM-VYt"/>
+                            <constraint firstItem="vGs-Ll-L3V" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" constant="20" id="DDP-hJ-Dei"/>
+                            <constraint firstItem="oFf-NW-0bv" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" id="Di0-Rh-rF3"/>
+                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="bottom" secondItem="oFf-NW-0bv" secondAttribute="bottom" constant="136" id="E3v-tw-Yuu"/>
                             <constraint firstItem="bEh-aU-szq" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" constant="20" id="HlZ-la-UEX"/>
+                            <constraint firstItem="reP-q7-VTU" firstAttribute="centerX" secondItem="cBv-1J-6JZ" secondAttribute="centerX" id="Mzy-eb-T4W"/>
+                            <constraint firstItem="vGs-Ll-L3V" firstAttribute="top" secondItem="cBv-1J-6JZ" secondAttribute="top" constant="112" id="QAr-Kx-HNb"/>
+                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="rjL-B1-LDe" secondAttribute="trailing" constant="20" id="dTx-bC-bf8"/>
+                            <constraint firstItem="rjL-B1-LDe" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" constant="20" id="fP9-hQ-G6K"/>
+                            <constraint firstItem="reP-q7-VTU" firstAttribute="top" secondItem="cBv-1J-6JZ" secondAttribute="top" constant="180" id="gI3-1a-DpH"/>
                             <constraint firstItem="bEh-aU-szq" firstAttribute="top" secondItem="cBv-1J-6JZ" secondAttribute="top" constant="20" id="qrl-38-6wN"/>
                             <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="bEh-aU-szq" secondAttribute="trailing" constant="20" id="thM-kb-GgY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Конвертер" image="point.topleft.down.curvedto.point.bottomright.up" catalog="system" id="qn1-2r-Hcf"/>
+                    <connections>
+                        <outlet property="firstLabel" destination="vGs-Ll-L3V" id="hPj-qS-aFB"/>
+                        <outlet property="pickerView" destination="oFf-NW-0bv" id="G4a-Wv-6R9"/>
+                        <outlet property="secondLabel" destination="rjL-B1-LDe" id="GN7-1s-X7g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qM-cz-igE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

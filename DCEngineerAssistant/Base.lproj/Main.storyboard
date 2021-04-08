@@ -1,24 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EbU-LU-ayM">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Калькулятор-->
+        <scene sceneID="jtg-Tb-pkb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="zHc-N9-wbH" customClass="CalculatorVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="smJ-tj-Rd4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP калькулятор" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU4-Oa-oV5">
+                                <rect key="frame" x="20" y="20" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rGX-zv-DtD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rGX-zv-DtD" firstAttribute="trailing" secondItem="TU4-Oa-oV5" secondAttribute="trailing" constant="20" id="Nsj-Wx-TbJ"/>
+                            <constraint firstItem="TU4-Oa-oV5" firstAttribute="top" secondItem="rGX-zv-DtD" secondAttribute="top" constant="20" id="Zat-fG-vkA"/>
+                            <constraint firstItem="TU4-Oa-oV5" firstAttribute="leading" secondItem="rGX-zv-DtD" secondAttribute="leading" constant="20" id="gVi-OQ-xZt"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Калькулятор" image="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" id="G4p-tf-v1n"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1O-2o-sia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1232" y="419"/>
+        </scene>
+        <!--Конвертер-->
+        <scene sceneID="sQf-ZL-kze">
+            <objects>
+                <viewController id="Ic5-dQ-IN1" customClass="CablesVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dhy-yG-7PC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Перевод единиц длины" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEh-aU-szq">
+                                <rect key="frame" x="20" y="20" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cBv-1J-6JZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bEh-aU-szq" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" constant="20" id="HlZ-la-UEX"/>
+                            <constraint firstItem="bEh-aU-szq" firstAttribute="top" secondItem="cBv-1J-6JZ" secondAttribute="top" constant="20" id="qrl-38-6wN"/>
+                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="bEh-aU-szq" secondAttribute="trailing" constant="20" id="thM-kb-GgY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Конвертер" image="point.topleft.down.curvedto.point.bottomright.up" catalog="system" id="qn1-2r-Hcf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qM-cz-igE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1230.4347826086957" y="-292.66304347826087"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Naf-Eb-ftl">
+            <objects>
+                <tabBarController id="EbU-LU-ayM" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RTX-Wr-GIk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ic5-dQ-IN1" kind="relationship" relationship="viewControllers" id="hMV-kJ-XPK"/>
+                        <segue destination="zHc-N9-wbH" kind="relationship" relationship="viewControllers" id="9lS-SZ-WWf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGZ-UB-Efn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="11"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" width="128" height="93"/>
+        <image name="point.topleft.down.curvedto.point.bottomright.up" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

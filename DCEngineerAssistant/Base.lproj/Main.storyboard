@@ -8,15 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Калькулятор-->
+        <!--Затраты-->
         <scene sceneID="jtg-Tb-pkb">
             <objects>
-                <viewController id="zHc-N9-wbH" customClass="CalculatorVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zHc-N9-wbH" customClass="ManHoursVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="smJ-tj-Rd4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP калькулятор" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU4-Oa-oV5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расчет трудозатрат" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TU4-Oa-oV5">
                                 <rect key="frame" x="20" y="20" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -31,16 +31,16 @@
                             <constraint firstItem="TU4-Oa-oV5" firstAttribute="leading" secondItem="rGX-zv-DtD" secondAttribute="leading" constant="20" id="gVi-OQ-xZt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Калькулятор" image="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" id="G4p-tf-v1n"/>
+                    <tabBarItem key="tabBarItem" title="Затраты" image="wrench.and.screwdriver" catalog="system" id="G4p-tf-v1n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1O-2o-sia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="419"/>
+            <point key="canvasLocation" x="2036" y="11"/>
         </scene>
         <!--Конвертер-->
         <scene sceneID="sQf-ZL-kze">
             <objects>
-                <viewController id="Ic5-dQ-IN1" customClass="CablesVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ic5-dQ-IN1" customClass="ConverterVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dhy-yG-7PC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,7 +96,7 @@
                             <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="bEh-aU-szq" secondAttribute="trailing" constant="20" id="thM-kb-GgY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Конвертер" image="point.topleft.down.curvedto.point.bottomright.up" catalog="system" id="qn1-2r-Hcf"/>
+                    <tabBarItem key="tabBarItem" title="Конвертер" image="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" id="qn1-2r-Hcf"/>
                     <connections>
                         <outlet property="firstLabel" destination="vGs-Ll-L3V" id="hPj-qS-aFB"/>
                         <outlet property="pickerView" destination="oFf-NW-0bv" id="G4a-Wv-6R9"/>
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qM-cz-igE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230.4347826086957" y="-292.66304347826087"/>
+            <point key="canvasLocation" x="1209" y="-520"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Naf-Eb-ftl">
@@ -119,16 +119,47 @@
                     <connections>
                         <segue destination="Ic5-dQ-IN1" kind="relationship" relationship="viewControllers" id="hMV-kJ-XPK"/>
                         <segue destination="zHc-N9-wbH" kind="relationship" relationship="viewControllers" id="9lS-SZ-WWf"/>
+                        <segue destination="MqE-ei-W7H" kind="relationship" relationship="viewControllers" id="87p-Wn-4eA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGZ-UB-Efn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="11"/>
         </scene>
+        <!--Калькулятор-->
+        <scene sceneID="zcq-gi-ira">
+            <objects>
+                <viewController id="MqE-ei-W7H" customClass="CalculatorVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tt6-7Z-JI6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP калькулятор" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Im-oi-dld">
+                                <rect key="frame" x="20" y="20" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Ji-QW-H7i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Im-oi-dld" firstAttribute="leading" secondItem="8Ji-QW-H7i" secondAttribute="leading" constant="20" id="QB8-3s-gvm"/>
+                            <constraint firstItem="8Ji-QW-H7i" firstAttribute="trailing" secondItem="9Im-oi-dld" secondAttribute="trailing" constant="20" id="SgG-6M-UcC"/>
+                            <constraint firstItem="9Im-oi-dld" firstAttribute="top" secondItem="8Ji-QW-H7i" secondAttribute="top" constant="20" id="uXx-kn-lNC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Калькулятор" image="f.cursive.circle" catalog="system" id="E6Y-LX-c38"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVV-kC-OMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="571"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" width="128" height="93"/>
-        <image name="point.topleft.down.curvedto.point.bottomright.up" catalog="system" width="121" height="128"/>
+        <image name="f.cursive.circle" catalog="system" width="128" height="121"/>
+        <image name="wrench.and.screwdriver" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

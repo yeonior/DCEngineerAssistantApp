@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CablesVC: UIViewController {
+class ConverterVC: UIViewController {
     
     var convertMode: Bool?
 
@@ -25,7 +25,7 @@ class CablesVC: UIViewController {
 
 }
 
-extension CablesVC: UIPickerViewDataSource, UIPickerViewDelegate {
+extension ConverterVC: UIPickerViewDataSource, UIPickerViewDelegate {
     
     // Количество компонентов
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

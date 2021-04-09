@@ -41,6 +41,11 @@ class ManHoursVC: UIViewController {
         createToolbar()        
     }
     
+    // Скрываем клавиатуры для любых объектов
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     // Расчет трудозатрат
     private func calculation() {
         
@@ -174,6 +179,21 @@ class ManHoursVC: UIViewController {
 }
 
 extension ManHoursVC: UITextFieldDelegate {
+    
+    // Проводим расчет перед началом редактирования
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        calculation()
+    }
+    
+    // Проводим расчет во время редактирования
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        calculation()
+    }
+    
+    // Проводим расчет после редактирования
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        calculation()
+    }
     
     // Ограничиваем количество символов в текстфилде
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

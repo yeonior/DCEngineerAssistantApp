@@ -35,6 +35,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tw9-lk-sRF">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="unloading:" destination="zHc-N9-wbH" eventType="valueChanged" id="f3U-q7-rl1"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -48,6 +51,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59I-Lv-Gx0">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="mounting:" destination="zHc-N9-wbH" eventType="valueChanged" id="WbN-cE-cXj"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -61,6 +67,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JGR-mh-2tu">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="commutation:" destination="zHc-N9-wbH" eventType="valueChanged" id="rVD-ti-D6j"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -74,6 +83,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51E-q4-jWt">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="configuration:" destination="zHc-N9-wbH" eventType="valueChanged" id="0EF-Qe-Gfy"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -87,12 +99,15 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ze7-D4-BRI">
                                                 <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="dcops:" destination="zHc-N9-wbH" eventType="valueChanged" id="2rC-ZO-p4g"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 m/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kps-9W-cez">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ч 0 м" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kps-9W-cez">
                                 <rect key="frame" x="20" y="112" width="374" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -104,11 +119,10 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jce-C7-niy">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="59"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lV7-OI-4P8">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="53" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lV7-OI-4P8">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество оборудования" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFK-C7-Nc8">
                                                 <rect key="frame" x="0.0" y="42" width="374" height="17"/>
@@ -121,11 +135,10 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Po-sb-AbX">
                                         <rect key="frame" x="0.0" y="79" width="374" height="59"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="50" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NkG-7g-JLj">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="260" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NkG-7g-JLj">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество трасс" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8x-bp-bQl">
                                                 <rect key="frame" x="0.0" y="42" width="374" height="17"/>
@@ -157,14 +170,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Затраты" image="wrench.and.screwdriver" catalog="system" id="G4p-tf-v1n"/>
                     <connections>
-                        <outlet property="commutation" destination="JGR-mh-2tu" id="fEh-o3-IqZ"/>
-                        <outlet property="configuration" destination="51E-q4-jWt" id="7hQ-hD-gjc"/>
+                        <outlet property="commutation" destination="JGR-mh-2tu" id="san-cv-dbR"/>
+                        <outlet property="configuration" destination="51E-q4-jWt" id="cqi-NI-tNn"/>
                         <outlet property="connections" destination="NkG-7g-JLj" id="LDV-Zd-2dq"/>
-                        <outlet property="dcops" destination="ze7-D4-BRI" id="4kY-in-iXm"/>
+                        <outlet property="dcops" destination="ze7-D4-BRI" id="9Ua-fh-k1x"/>
                         <outlet property="equipment" destination="lV7-OI-4P8" id="1Hr-pd-PQ0"/>
                         <outlet property="label" destination="Kps-9W-cez" id="Sqi-il-U7u"/>
-                        <outlet property="mounting" destination="59I-Lv-Gx0" id="6wm-Lp-Dji"/>
-                        <outlet property="unloading" destination="tw9-lk-sRF" id="THi-Y3-CVH"/>
+                        <outlet property="mounting" destination="59I-Lv-Gx0" id="ae6-MY-2Tm"/>
+                        <outlet property="unloading" destination="tw9-lk-sRF" id="8qv-ec-BIg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1O-2o-sia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

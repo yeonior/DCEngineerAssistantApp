@@ -22,6 +22,22 @@ class ConverterVC: UIViewController {
         firstLabel.text = "1 ft"
         secondLabel.text = "0.3 m"
     }
+    
+    // Метод конвертации
+    func convert() {
+        
+        if convertMode == false {
+            let value = pickerView.selectedRow(inComponent: 1) + 1
+            let convertResult = round(Double(value) * 30.48)/100
+            firstLabel.text = "\(value) ft"
+            secondLabel.text = "\(convertResult) m"
+        } else {
+            let value = pickerView.selectedRow(inComponent: 1) + 1
+            let convertResult = round(Double(value) * 328.084)/100
+            firstLabel.text = "\(value) m"
+            secondLabel.text = "\(convertResult) ft"
+        }
+    }
 
 }
 
@@ -67,23 +83,6 @@ extension ConverterVC: UIPickerViewDataSource, UIPickerViewDelegate {
         
         // Конвертация
         convert()
-    }
-    
-    // Метод конвертации
-    func convert() {
-        
-        if convertMode == false {
-            let value = pickerView.selectedRow(inComponent: 1) + 1
-            let convertResult = round(Double(value) * 30.48)/100
-            firstLabel.text = "\(value) ft"
-            secondLabel.text = "\(convertResult) m"
-        } else {
-            let value = pickerView.selectedRow(inComponent: 1) + 1
-            let convertResult = round(Double(value) * 328.084)/100
-            firstLabel.text = "\(value) m"
-            secondLabel.text = "\(convertResult) ft"
-        }
-        
     }
     
 }

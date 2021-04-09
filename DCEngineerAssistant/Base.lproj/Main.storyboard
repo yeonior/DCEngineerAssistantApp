@@ -287,20 +287,123 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wJ5-zT-rJv">
+                                <rect key="frame" x="20" y="107" width="374" height="192"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fbA-7g-fj0" userLabel="1">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50.666666666666664"/>
+                                        <subviews>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="192.168.0.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-z3-R1l">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="25.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP-адрес сети" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-pu-cW6">
+                                                <rect key="frame" x="0.0" y="33.666666666666657" width="374" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="maX-07-Xr7" userLabel="2">
+                                        <rect key="frame" x="0.0" y="70.666666666666657" width="374" height="50.666666666666657"/>
+                                        <subviews>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="192.168.0.255" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FDf-w3-B8n">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="25.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Широковещательный адрес" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TG-qc-Vgc">
+                                                <rect key="frame" x="0.0" y="33.666666666666686" width="374" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cet-o0-ZF0" userLabel="3">
+                                        <rect key="frame" x="0.0" y="141.33333333333334" width="374" height="50.666666666666657"/>
+                                        <subviews>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="255.255.255.0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qvq-XQ-yHe">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="25.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Маска подсети (полная)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-B1-C7w">
+                                                <rect key="frame" x="0.0" y="33.666666666666657" width="374" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jta-fV-RgS">
+                                <rect key="frame" x="20" y="319" width="374" height="138"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YnW-J9-fi1" userLabel="4">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="59"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.0.1" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="50V-0v-q2D">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP-адрес" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hw-qo-zkz">
+                                                <rect key="frame" x="0.0" y="42" width="374" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Igt-cI-6AP" userLabel="5">
+                                        <rect key="frame" x="0.0" y="79" width="374" height="59"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="24" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PCW-Zp-DRI">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Маска подсети (сокращенная)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69k-b1-OUT">
+                                                <rect key="frame" x="0.0" y="42" width="374" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Ji-QW-H7i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jta-fV-RgS" firstAttribute="top" secondItem="wJ5-zT-rJv" secondAttribute="bottom" constant="20" id="6Rz-tn-uQf"/>
                             <constraint firstItem="9Im-oi-dld" firstAttribute="leading" secondItem="8Ji-QW-H7i" secondAttribute="leading" constant="20" id="QB8-3s-gvm"/>
                             <constraint firstItem="8Ji-QW-H7i" firstAttribute="trailing" secondItem="9Im-oi-dld" secondAttribute="trailing" constant="20" id="SgG-6M-UcC"/>
+                            <constraint firstItem="wJ5-zT-rJv" firstAttribute="leading" secondItem="8Ji-QW-H7i" secondAttribute="leading" constant="20" id="WFD-Fd-HxC"/>
+                            <constraint firstItem="jta-fV-RgS" firstAttribute="leading" secondItem="8Ji-QW-H7i" secondAttribute="leading" constant="20" id="hN4-1V-qeA"/>
+                            <constraint firstItem="8Ji-QW-H7i" firstAttribute="trailing" secondItem="jta-fV-RgS" secondAttribute="trailing" constant="20" id="kVY-zg-342"/>
+                            <constraint firstItem="wJ5-zT-rJv" firstAttribute="top" secondItem="9Im-oi-dld" secondAttribute="bottom" constant="63" id="lcA-m4-fJz"/>
                             <constraint firstItem="9Im-oi-dld" firstAttribute="top" secondItem="8Ji-QW-H7i" secondAttribute="top" constant="20" id="uXx-kn-lNC"/>
+                            <constraint firstItem="8Ji-QW-H7i" firstAttribute="trailing" secondItem="wJ5-zT-rJv" secondAttribute="trailing" constant="20" id="yFu-QJ-zmX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Калькулятор" image="f.cursive.circle" catalog="system" id="E6Y-LX-c38"/>
+                    <connections>
+                        <outlet property="address" destination="50V-0v-q2D" id="Jde-w9-AaW"/>
+                        <outlet property="broadcast" destination="FDf-w3-B8n" id="JMW-jB-Vlb"/>
+                        <outlet property="fullMask" destination="Qvq-XQ-yHe" id="bIA-ub-Um4"/>
+                        <outlet property="mask" destination="PCW-Zp-DRI" id="6jD-Zh-2Rg"/>
+                        <outlet property="net" destination="rkq-z3-R1l" id="YBV-I7-cSw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVV-kC-OMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="571"/>
+            <point key="canvasLocation" x="1208.6956521739132" y="570.6521739130435"/>
         </scene>
     </scenes>
     <resources>

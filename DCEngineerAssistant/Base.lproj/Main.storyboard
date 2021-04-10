@@ -330,7 +330,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Маска подсети (полная)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-B1-C7w">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Маска подсети" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-B1-C7w">
                                                 <rect key="frame" x="0.0" y="33.666666666666657" width="374" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
@@ -367,7 +367,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Маска подсети (сокращенная)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69k-b1-OUT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Префикс маски" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69k-b1-OUT">
                                                 <rect key="frame" x="0.0" y="42" width="374" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
@@ -396,9 +396,9 @@
                     <connections>
                         <outlet property="address" destination="50V-0v-q2D" id="Jde-w9-AaW"/>
                         <outlet property="broadcast" destination="FDf-w3-B8n" id="JMW-jB-Vlb"/>
-                        <outlet property="fullMask" destination="Qvq-XQ-yHe" id="bIA-ub-Um4"/>
-                        <outlet property="mask" destination="PCW-Zp-DRI" id="6jD-Zh-2Rg"/>
+                        <outlet property="mask" destination="Qvq-XQ-yHe" id="bIA-ub-Um4"/>
                         <outlet property="net" destination="rkq-z3-R1l" id="YBV-I7-cSw"/>
+                        <outlet property="prefix" destination="PCW-Zp-DRI" id="6jD-Zh-2Rg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVV-kC-OMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,7 @@
 		A2E3F7B4261EF6A60081206E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2E3F7B3261EF6A60081206E /* Assets.xcassets */; };
 		A2E3F7B7261EF6A60081206E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E3F7B5261EF6A60081206E /* LaunchScreen.storyboard */; };
 		A2E3F7C4261EFAD30081206E /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3F7C3261EFAD30081206E /* CalculatorVC.swift */; };
+		A2EA3A7D2622E41100C05B40 /* CommutationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EA3A7C2622E41100C05B40 /* CommutationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A2E3F7B6261EF6A60081206E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2E3F7B8261EF6A60081206E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E3F7C3261EFAD30081206E /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
+		A2EA3A7C2622E41100C05B40 /* CommutationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A2E3F7AE261EF6A50081206E /* ConverterVC.swift */,
 				A27C577C261F3DE80067A627 /* ManHoursVC.swift */,
 				A2E3F7C3261EFAD30081206E /* CalculatorVC.swift */,
+				A2EA3A7C2622E41100C05B40 /* CommutationVC.swift */,
 				A2E3F7B0261EF6A50081206E /* Main.storyboard */,
 				A2E3F7B3261EF6A60081206E /* Assets.xcassets */,
 				A2E3F7B5261EF6A60081206E /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				A2E3F7C4261EFAD30081206E /* CalculatorVC.swift in Sources */,
 				A27C577D261F3DE80067A627 /* ManHoursVC.swift in Sources */,
 				A2E3F7AF261EF6A50081206E /* ConverterVC.swift in Sources */,
+				A2EA3A7D2622E41100C05B40 /* CommutationVC.swift in Sources */,
 				A2E3F7AB261EF6A50081206E /* AppDelegate.swift in Sources */,
 				A2E3F7AD261EF6A50081206E /* SceneDelegate.swift in Sources */,
 			);

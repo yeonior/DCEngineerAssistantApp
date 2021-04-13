@@ -12,9 +12,9 @@ class CommutationCell: UITableViewCell {
     @IBOutlet weak var cordType: UIImageView!
     @IBOutlet weak var patchType: UIImageView!
     
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var designationLabel: UILabel!
     @IBOutlet weak var lengthLabel: UILabel!
-    @IBOutlet weak var reserveLabel: UILabel!
     
     @IBOutlet weak var sourceCabinetLabel: UILabel!
     @IBOutlet weak var sourceEquipmentLabel: UILabel!

@@ -9,7 +9,7 @@ import UIKit
 
 class ConverterVC: UIViewController {
     
-    var convertMode: Bool?
+    var convertMode = false
 
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var firstLabel: UILabel!
@@ -18,7 +18,6 @@ class ConverterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        convertMode = false
         firstLabel.text = "1 ft"
         secondLabel.text = "0.3 m"
     }
@@ -26,16 +25,16 @@ class ConverterVC: UIViewController {
     // Метод конвертации
     func convert() {
         
-        if convertMode == false {
+        if convertMode {
             let value = pickerView.selectedRow(inComponent: 1) + 1
-            let convertResult = round(Double(value) * 30.48)/100
-            firstLabel.text = "\(value) ft"
-            secondLabel.text = "\(convertResult) m"
+            let convertedResult = round(Double(value) * 3.28084 * 100) / 100
+            firstLabel.text = "\(value) m"
+            secondLabel.text = "\(convertedResult) ft"
         } else {
             let value = pickerView.selectedRow(inComponent: 1) + 1
-            let convertResult = round(Double(value) * 328.084)/100
-            firstLabel.text = "\(value) m"
-            secondLabel.text = "\(convertResult) ft"
+            let convertedResult = round(Double(value) * 0.3048 * 100) / 100
+            firstLabel.text = "\(value) ft"
+            secondLabel.text = "\(convertedResult) m"
         }
     }
 

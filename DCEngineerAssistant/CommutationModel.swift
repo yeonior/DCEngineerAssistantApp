@@ -12,9 +12,9 @@ struct Patch {
     var cord: String?
     var patch: String?
     
+    var number: String?
     var designation: String
     var length: String
-    var reserve: String?
     
     var sourceCabinet: String
     var sourceEquipment: String

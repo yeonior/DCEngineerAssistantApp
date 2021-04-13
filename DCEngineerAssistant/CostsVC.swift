@@ -132,7 +132,7 @@ class CostsVC: UIViewController {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneAction))
+        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(doneAction))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolBar.items = [flexibleSpace, doneButton]
         toolBar.isUserInteractionEnabled = true

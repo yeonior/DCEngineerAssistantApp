@@ -68,7 +68,7 @@ class CalculatorVC: UIViewController {
         mask.text = "N/A"
     }
     
-    // Скрываем клавиатуры для любых объектов
+    // Скрываем клавиатуру при тапе для любых объектов
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

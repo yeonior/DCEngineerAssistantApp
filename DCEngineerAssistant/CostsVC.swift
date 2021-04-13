@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ManHoursVC: UIViewController {
+class CostsVC: UIViewController {
     
     var equipmentNumber: Double?
     var connectionsNumber: Double?
@@ -132,17 +132,19 @@ class ManHoursVC: UIViewController {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneAction))
-        toolBar.items = [doneButton]
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneAction))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolBar.items = [flexibleSpace, doneButton]
         toolBar.isUserInteractionEnabled = true
+        doneButton.tintColor = .systemOrange
         equipment.inputAccessoryView = toolBar
         connections.inputAccessoryView = toolBar
+
         
     }
     
     // Действие по нажатию на кнопку Done клавиатуры
     @objc private func doneAction() {
-        calculation()
         view.endEditing(true)
     }
     
@@ -178,7 +180,7 @@ class ManHoursVC: UIViewController {
     
 }
 
-extension ManHoursVC: UITextFieldDelegate {
+extension CostsVC: UITextFieldDelegate {
     
     // Проводим расчет перед началом редактирования
     func textFieldDidBeginEditing(_ textField: UITextField) {

@@ -9,10 +9,10 @@ import Foundation
 
 struct Patch {
     
-    var cordType: String?
-    var patchType: String?
+    var cord: String?
+    var patch: String?
     
-    var cordLabel: String
+    var designation: String
     var length: String
     var reserve: String?
     

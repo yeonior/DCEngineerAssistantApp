@@ -9,10 +9,10 @@ import UIKit
 
 class CommutationCell: UITableViewCell {
     
-    @IBOutlet weak var cordTypeStatus: UIImageView!
-    @IBOutlet weak var patchTypeStatus: UIImageView!
+    @IBOutlet weak var cordType: UIImageView!
+    @IBOutlet weak var patchType: UIImageView!
     
-    @IBOutlet weak var cordLabelLabel: UILabel!
+    @IBOutlet weak var designationLabel: UILabel!
     @IBOutlet weak var lengthLabel: UILabel!
     @IBOutlet weak var reserveLabel: UILabel!
     

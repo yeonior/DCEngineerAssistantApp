@@ -19,9 +19,11 @@
 		A2E3F7B7261EF6A60081206E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E3F7B5261EF6A60081206E /* LaunchScreen.storyboard */; };
 		A2E3F7C4261EFAD30081206E /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3F7C3261EFAD30081206E /* CalculatorVC.swift */; };
 		A2EA3A7D2622E41100C05B40 /* CommutationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EA3A7C2622E41100C05B40 /* CommutationVC.swift */; };
+		EF0084B9EA7AD16C3ACACF5C /* Pods_DCEngineerAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72905C01079F7E496CC87E2 /* Pods_DCEngineerAssistant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		754B9096DC159D82AFB23831 /* Pods-DCEngineerAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCEngineerAssistant.release.xcconfig"; path = "Target Support Files/Pods-DCEngineerAssistant/Pods-DCEngineerAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		A2172686262331DD007AA2C8 /* CommutationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutationCell.swift; sourceTree = "<group>"; };
 		A217268926235605007AA2C8 /* CommutationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutationModel.swift; sourceTree = "<group>"; };
 		A27C577C261F3DE80067A627 /* CostsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostsVC.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		A2E3F7B8261EF6A60081206E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E3F7C3261EFAD30081206E /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		A2EA3A7C2622E41100C05B40 /* CommutationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutationVC.swift; sourceTree = "<group>"; };
+		E3464D1464E24F7D8454A7EF /* Pods-DCEngineerAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DCEngineerAssistant.debug.xcconfig"; path = "Target Support Files/Pods-DCEngineerAssistant/Pods-DCEngineerAssistant.debug.xcconfig"; sourceTree = "<group>"; };
+		F72905C01079F7E496CC87E2 /* Pods_DCEngineerAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DCEngineerAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0084B9EA7AD16C3ACACF5C /* Pods_DCEngineerAssistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		359B68B45BAAA1CAF1393BD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F72905C01079F7E496CC87E2 /* Pods_DCEngineerAssistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2E3F79E261EF6A50081206E = {
 			isa = PBXGroup;
 			children = (
 				A2E3F7A9261EF6A50081206E /* DCEngineerAssistant */,
 				A2E3F7A8261EF6A50081206E /* Products */,
+				A56BF3C0B89E856AF685B582 /* Pods */,
+				359B68B45BAAA1CAF1393BD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +100,16 @@
 			path = DCEngineerAssistant;
 			sourceTree = "<group>";
 		};
+		A56BF3C0B89E856AF685B582 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3464D1464E24F7D8454A7EF /* Pods-DCEngineerAssistant.debug.xcconfig */,
+				754B9096DC159D82AFB23831 /* Pods-DCEngineerAssistant.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2E3F7BB261EF6A60081206E /* Build configuration list for PBXNativeTarget "DCEngineerAssistant" */;
 			buildPhases = (
+				24C2F7BE172513D0A7DF4B8C /* [CP] Check Pods Manifest.lock */,
 				A2E3F7A3261EF6A50081206E /* Sources */,
 				A2E3F7A4261EF6A50081206E /* Frameworks */,
 				A2E3F7A5261EF6A50081206E /* Resources */,
+				CBA7C4A89FA3454556DDAA29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24C2F7BE172513D0A7DF4B8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DCEngineerAssistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBA7C4A89FA3454556DDAA29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DCEngineerAssistant/Pods-DCEngineerAssistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DCEngineerAssistant/Pods-DCEngineerAssistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DCEngineerAssistant/Pods-DCEngineerAssistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A2E3F7A3261EF6A50081206E /* Sources */ = {
@@ -307,6 +376,7 @@
 		};
 		A2E3F7BC261EF6A60081206E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3464D1464E24F7D8454A7EF /* Pods-DCEngineerAssistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,6 +396,7 @@
 		};
 		A2E3F7BD261EF6A60081206E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 754B9096DC159D82AFB23831 /* Pods-DCEngineerAssistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

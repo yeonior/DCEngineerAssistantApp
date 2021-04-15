@@ -17,4 +17,11 @@ class StorageManager {
             realm.add(patch)
         }
     }
+    
+    static func deletePatch(_ patch: Patch) {
+        
+        try! realm.write {
+            realm.delete(patch)
+        }
+    }
 }

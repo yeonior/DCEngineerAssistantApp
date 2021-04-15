@@ -352,6 +352,7 @@
                                     <outlet property="sourceCabinetLabel" destination="RHW-Wn-263" id="vyG-8y-L6C"/>
                                     <outlet property="sourceEquipmentLabel" destination="Wve-YT-yvr" id="mFG-hD-KS7"/>
                                     <outlet property="sourcePortLabel" destination="R0V-0j-jaL" id="6Ko-re-YYQ"/>
+                                    <segue destination="bke-t3-GOM" kind="show" identifier="showDetail" id="qdD-M6-Xql"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -384,7 +385,7 @@
             <objects>
                 <tableViewController id="bke-t3-GOM" customClass="NewPatchVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nLa-eY-Vpm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="880"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -925,7 +926,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwp-Hb-jws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ohh-bD-u79" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3936.2318840579715" y="950.54347826086962"/>
+            <point key="canvasLocation" x="3126" y="1402"/>
         </scene>
         <!--Коммутация-->
         <scene sceneID="BcA-6K-GWg">
@@ -1227,9 +1228,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYv-dz-Z3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3028.985507246377" y="950.54347826086962"/>
+            <point key="canvasLocation" x="3126" y="577"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qdD-M6-Xql"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>

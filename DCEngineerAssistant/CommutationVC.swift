@@ -31,7 +31,7 @@ class CommutationVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CommutationCell
 
         let patch = patches[indexPath.row]
-
+        
         cell.numberLabel.text = "#\(indexPath.row + 1)"
         cell.designationLabel.text = patch.designation
         cell.lengthLabel.text = patch.length
@@ -42,11 +42,27 @@ class CommutationVC: UITableViewController {
         cell.destinationCabinetLabel.text = patch.destinationCabinet
         cell.destinationEquipmentLabel.text = patch.destinationEquipment
         cell.destinationPortLabel.text = patch.destinationPort
-
-        cell.cordType.backgroundColor = #colorLiteral(red: 1, green: 0.9366992116, blue: 0.9999226928, alpha: 1)
+        
         cell.cordType.layer.cornerRadius = 12
-        cell.patchType.backgroundColor = #colorLiteral(red: 0.8965173364, green: 1, blue: 0.9313797355, alpha: 1)
         cell.patchType.layer.cornerRadius = 12
+        
+        if patch.cord == "Медный" {
+            cell.cordType.backgroundColor = #colorLiteral(red: 1, green: 0.9455534816, blue: 0.8905586004, alpha: 1)
+        } else if patch.cord == "Оптический" {
+            cell.cordType.backgroundColor = #colorLiteral(red: 0.8719622493, green: 0.9893744588, blue: 0.9981372952, alpha: 1)
+        } else {
+            cell.cordType.backgroundColor = #colorLiteral(red: 0.9663011432, green: 0.9587772489, blue: 0.9720537066, alpha: 1)
+        }
+        
+        if patch.patch == "ОБ-ОБ" {
+            cell.patchType.backgroundColor = #colorLiteral(red: 0.8965173364, green: 1, blue: 0.9313797355, alpha: 1)
+        } else if patch.patch == "ОБ-ПП" {
+            cell.patchType.backgroundColor = #colorLiteral(red: 0.9905745387, green: 0.9907528758, blue: 0.8805480003, alpha: 1)
+        } else if patch.patch == "ПП-ПП" {
+            cell.patchType.backgroundColor = #colorLiteral(red: 1, green: 0.9403695464, blue: 1, alpha: 1)
+        } else {
+            cell.patchType.backgroundColor = #colorLiteral(red: 0.9663011432, green: 0.9587772489, blue: 0.9720537066, alpha: 1)
+        }
 
         return cell
     }
@@ -56,6 +72,17 @@ class CommutationVC: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 90
+    }
+    
+    // Добавление свайпэкшена
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let patch = patches[indexPath.row]
+            StorageManager.deletePatch(patch)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
+        }
     }
     
     // Вызываем алерт контроллер по нажатию на кнопку сортировки
@@ -78,11 +105,23 @@ class CommutationVC: UITableViewController {
         present(actionSheet, animated: true)
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let patch = patches[indexPath.row]
+            let newPatchVC = segue.destination as! NewPatchVC
+            newPatchVC.currentPatch = patch
+        }
+    }
+    
     // Сохраняем новое соединение в новую ячейку
     @IBAction func saveAction(_ segue: UIStoryboardSegue) {
         
         guard let newPatchVC = segue.source as? NewPatchVC else { return }
-        newPatchVC.saveNewPatch()
+        newPatchVC.savePatch()
         tableView.reloadData()
     }
 }

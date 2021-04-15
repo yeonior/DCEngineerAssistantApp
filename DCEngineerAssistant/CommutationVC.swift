@@ -6,45 +6,43 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CommutationVC: UITableViewController {
     
-    var patches = [
-                    Patch(cord: nil, patch: nil, number: nil, designation: "FB00041", length: "12,4 м", sourceCabinet: "R05C01", sourceEquipment: "COD99-ABC01", sourcePort: "3", destinationCabinet: "R06C07", destinationEquipment: "COD99-ABCDEFGHI01", destinationPort: "2"),
-                    Patch(cord: nil, patch: nil, number: nil, designation: "TP00387", length: "3,05 м", sourceCabinet: "R08C02", sourceEquipment: "COD99-ABCDEFGHIJK02", sourcePort: "1/MGMT", destinationCabinet: "R08C02", destinationEquipment: "B", destinationPort: "23"),
-                    Patch(cord: nil, patch: nil, number: nil, designation: "FB00112", length: "5 м", sourceCabinet: "R04C01", sourceEquipment: "COD99-ABC03", sourcePort: "2/7", destinationCabinet: "R04C01", destinationEquipment: "A", destinationPort: "5"),
-                    Patch(cord: nil, patch: nil, number: nil, designation: "TP00018", length: "10 м", sourceCabinet: "R12C15", sourceEquipment: "COD99-ABCD01", sourcePort: "ETH", destinationCabinet: "R12C10", destinationEquipment: "COD99-AB10", destinationPort: "48")
-                  ]
+    var patches: Results<Patch>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        patches = realm.objects(Patch.self)
+        
         // Скрываем разделители для отсутствующих ячеек
         tableView.tableFooterView = UIView()
-
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return patches.count
+        return patches.isEmpty ? 0 : patches.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CommutationCell
-        
+
         let patch = patches[indexPath.row]
-        
+
         cell.numberLabel.text = "#\(indexPath.row + 1)"
         cell.designationLabel.text = patch.designation
         cell.lengthLabel.text = patch.length
+    
         cell.sourceCabinetLabel.text = patch.sourceCabinet
         cell.sourceEquipmentLabel.text = patch.sourceEquipment
         cell.sourcePortLabel.text = patch.sourcePort
         cell.destinationCabinetLabel.text = patch.destinationCabinet
         cell.destinationEquipmentLabel.text = patch.destinationEquipment
         cell.destinationPortLabel.text = patch.destinationPort
-        
+
         cell.cordType.backgroundColor = #colorLiteral(red: 1, green: 0.9366992116, blue: 0.9999226928, alpha: 1)
         cell.cordType.layer.cornerRadius = 12
         cell.patchType.backgroundColor = #colorLiteral(red: 0.8965173364, green: 1, blue: 0.9313797355, alpha: 1)
@@ -85,7 +83,6 @@ class CommutationVC: UITableViewController {
         
         guard let newPatchVC = segue.source as? NewPatchVC else { return }
         newPatchVC.saveNewPatch()
-        patches.append(newPatchVC.newPatch!)
         tableView.reloadData()
     }
 }

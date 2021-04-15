@@ -9,8 +9,6 @@ import UIKit
 
 class NewPatchVC: UITableViewController {
     
-    var newPatch: Patch?
-    
     @IBOutlet weak var typeTF: UITextField!
     @IBOutlet weak var categoryTF: UITextField!
     @IBOutlet weak var lengthTF: UITextField!
@@ -82,18 +80,21 @@ class NewPatchVC: UITableViewController {
     // Сохранение нового соединения
     func saveNewPatch() {
         
-        newPatch = Patch(cord: nil,
+        let newPatch = Patch(cord: nil,
                              patch: nil,
+                             
                              number: nil,
-                             designation: designationTF.text!,
-                             length: lengthTF.text!,
-                             sourceCabinet: sourceCabinetTF.text!,
-                             sourceEquipment: sourceEquipmentTF.text!,
-                             sourcePort: sourcePortTF.text!,
-                             destinationCabinet: destinationCabinetTF.text!,
-                             destinationEquipment: destinationEquipmentTF.text!,
-                             destinationPort: destinationPortTF.text!)
+                             designation: designationTF.text,
+                             length: lengthTF.text,
+                             
+                             sourceCabinet: sourceCabinetTF.text,
+                             sourceEquipment: sourceEquipmentTF.text,
+                             sourcePort: sourcePortTF.text,
+                             destinationCabinet: destinationCabinetTF.text,
+                             destinationEquipment: destinationEquipmentTF.text,
+                             destinationPort: destinationPortTF.text)
         
+        StorageManager.savePatch(newPatch)
     }
 
     @IBAction func cancelAction(_ sender: Any) {

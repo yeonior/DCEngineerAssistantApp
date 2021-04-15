@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A2172687262331DD007AA2C8 /* CommutationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2172686262331DD007AA2C8 /* CommutationCell.swift */; };
 		A217268A26235605007AA2C8 /* CommutationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A217268926235605007AA2C8 /* CommutationModel.swift */; };
 		A27C577D261F3DE80067A627 /* CostsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27C577C261F3DE80067A627 /* CostsVC.swift */; };
+		A2D18D32262851F2002D7EBE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D18D31262851F2002D7EBE /* StorageManager.swift */; };
 		A2E3AE7F2625B1A50060E46D /* NewPatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3AE7E2625B1A50060E46D /* NewPatchVC.swift */; };
 		A2E3F7AB261EF6A50081206E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3F7AA261EF6A50081206E /* AppDelegate.swift */; };
 		A2E3F7AD261EF6A50081206E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3F7AC261EF6A50081206E /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 		A2172686262331DD007AA2C8 /* CommutationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutationCell.swift; sourceTree = "<group>"; };
 		A217268926235605007AA2C8 /* CommutationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommutationModel.swift; sourceTree = "<group>"; };
 		A27C577C261F3DE80067A627 /* CostsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostsVC.swift; sourceTree = "<group>"; };
+		A2D18D31262851F2002D7EBE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A2E3AE7E2625B1A50060E46D /* NewPatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPatchVC.swift; sourceTree = "<group>"; };
 		A2E3F7A7261EF6A50081206E /* DCEngineerAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCEngineerAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E3F7AA261EF6A50081206E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				A2172686262331DD007AA2C8 /* CommutationCell.swift */,
 				A217268926235605007AA2C8 /* CommutationModel.swift */,
 				A2E3AE7E2625B1A50060E46D /* NewPatchVC.swift */,
+				A2D18D31262851F2002D7EBE /* StorageManager.swift */,
 				A2E3F7B0261EF6A50081206E /* Main.storyboard */,
 				A2E3F7B3261EF6A60081206E /* Assets.xcassets */,
 				A2E3F7B5261EF6A60081206E /* LaunchScreen.storyboard */,
@@ -106,7 +109,6 @@
 				E3464D1464E24F7D8454A7EF /* Pods-DCEngineerAssistant.debug.xcconfig */,
 				754B9096DC159D82AFB23831 /* Pods-DCEngineerAssistant.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -231,6 +233,7 @@
 				A2E3F7AF261EF6A50081206E /* ConverterVC.swift in Sources */,
 				A2172687262331DD007AA2C8 /* CommutationCell.swift in Sources */,
 				A2EA3A7D2622E41100C05B40 /* CommutationVC.swift in Sources */,
+				A2D18D32262851F2002D7EBE /* StorageManager.swift in Sources */,
 				A2E3F7AB261EF6A50081206E /* AppDelegate.swift in Sources */,
 				A2E3F7AD261EF6A50081206E /* SceneDelegate.swift in Sources */,
 			);

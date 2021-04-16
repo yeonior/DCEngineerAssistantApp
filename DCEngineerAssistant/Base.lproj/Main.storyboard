@@ -383,7 +383,7 @@
         <!--Новое соединение-->
         <scene sceneID="ApF-ja-l8b">
             <objects>
-                <tableViewController id="bke-t3-GOM" customClass="NewPatchVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="bke-t3-GOM" customClass="NewPatchVC" customModule="DCEngineerAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nLa-eY-Vpm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -953,7 +953,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-gD-oE6">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-gD-oE6">
                                 <rect key="frame" x="20" y="84" width="374" height="196"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 FT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGs-Ll-L3V">
@@ -975,9 +975,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="54n-mB-T5q"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="ll3-52-rWE"/>
+                                </constraints>
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFf-NW-0bv">
-                                <rect key="frame" x="75" y="340" width="264" height="216"/>
+                                <rect key="frame" x="60" y="308" width="294" height="339"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="h36-bm-svv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="sDd-na-Hpa"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="Ic5-dQ-IN1" id="2Xm-L8-RLY"/>
                                     <outlet property="delegate" destination="Ic5-dQ-IN1" id="OUJ-bx-Gix"/>
@@ -987,12 +995,13 @@
                         <viewLayoutGuide key="safeArea" id="cBv-1J-6JZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="oFf-NW-0bv" secondAttribute="trailing" constant="75" id="8bg-e1-N4H"/>
+                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="oFf-NW-0bv" secondAttribute="trailing" constant="60" id="8bg-e1-N4H"/>
                             <constraint firstItem="cBv-1J-6JZ" firstAttribute="trailing" secondItem="sjv-gD-oE6" secondAttribute="trailing" constant="20" id="PWN-J5-s8q"/>
+                            <constraint firstItem="oFf-NW-0bv" firstAttribute="top" secondItem="sjv-gD-oE6" secondAttribute="bottom" constant="28" id="UIt-HY-Dty"/>
+                            <constraint firstItem="cBv-1J-6JZ" firstAttribute="bottom" secondItem="oFf-NW-0bv" secondAttribute="bottom" constant="40" id="WAv-vf-Vg3"/>
                             <constraint firstItem="sjv-gD-oE6" firstAttribute="top" secondItem="cBv-1J-6JZ" secondAttribute="top" constant="40" id="dxv-S6-Fxk"/>
-                            <constraint firstItem="oFf-NW-0bv" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" constant="75" id="r90-hb-ctj"/>
+                            <constraint firstItem="oFf-NW-0bv" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" constant="60" id="r90-hb-ctj"/>
                             <constraint firstItem="sjv-gD-oE6" firstAttribute="leading" secondItem="cBv-1J-6JZ" secondAttribute="leading" constant="20" id="rVM-zh-xML"/>
-                            <constraint firstItem="oFf-NW-0bv" firstAttribute="top" secondItem="sjv-gD-oE6" secondAttribute="bottom" constant="60" id="sPv-b8-1Vj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Перевод единиц длины" id="FyT-rm-idV"/>

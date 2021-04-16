@@ -142,6 +142,7 @@ class NewPatchVC: UITableViewController {
     
     // Метод изменения навигейшн бара
     private func setupNavigationBar() {
+        
         if let topItem = navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "Назад", style: .plain, target: nil, action: nil)
             topItem.backBarButtonItem?.tintColor = .systemOrange

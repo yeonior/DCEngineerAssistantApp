@@ -15,7 +15,7 @@ class CommutationVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        patches = realm.objects(Patch.self)
+        patches = realm.objects(Patch.self).sorted(byKeyPath: "designation", ascending: true)
         
         // Скрываем разделители для отсутствующих ячеек
         tableView.tableFooterView = UIView()
@@ -90,16 +90,22 @@ class CommutationVC: UITableViewController {
         
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let nameAZ = UIAlertAction(title: "По имени ↑", style: .default) { _ in }
-        let nameZA = UIAlertAction(title: "По имени ↓", style: .default) { _ in }
-        let data19 = UIAlertAction(title: "По дате ↑", style: .default) { _ in }
-        let data91 = UIAlertAction(title: "По дате ↓", style: .default) { _ in }
+        let nameAZ = UIAlertAction(title: "По имени ↑", style: .default, handler: { _ in
+            self.patches = self.patches.sorted(byKeyPath: "designation", ascending: true)
+            self.tableView.reloadData()
+        })
+        let nameZA = UIAlertAction(title: "По имени ↓", style: .default, handler: { _ in
+            self.patches = self.patches.sorted(byKeyPath: "designation", ascending: false)
+            self.tableView.reloadData()
+        })
+//        let data19 = UIAlertAction(title: "По дате ↑", style: .default) { _ in }
+//        let data91 = UIAlertAction(title: "По дате ↓", style: .default) { _ in }
         let cancel = UIAlertAction(title: "Отмена", style: .cancel)
         
         actionSheet.addAction(nameAZ)
         actionSheet.addAction(nameZA)
-        actionSheet.addAction(data19)
-        actionSheet.addAction(data91)
+//        actionSheet.addAction(data19)
+//        actionSheet.addAction(data91)
         actionSheet.addAction(cancel)
         
         present(actionSheet, animated: true)

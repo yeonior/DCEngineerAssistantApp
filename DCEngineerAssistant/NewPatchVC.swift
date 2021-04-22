@@ -50,6 +50,8 @@ class NewPatchVC: UITableViewController {
         
         setupEditScreen()
         
+        tableView.tableFooterView = UIView()
+        
         // Скрываем клавиатуру по тапу
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)

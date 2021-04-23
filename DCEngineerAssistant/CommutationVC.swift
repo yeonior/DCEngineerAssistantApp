@@ -10,7 +10,17 @@ import RealmSwift
 
 class CommutationVC: UITableViewController {
     
-    var patches: Results<Patch>!
+    private let searchController = UISearchController(searchResultsController: nil)
+    
+    private var patches: Results<Patch>!
+    private var filteredPatches: Results<Patch>!
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +29,34 @@ class CommutationVC: UITableViewController {
         
         // Скрываем разделители для отсутствующих ячеек
         tableView.tableFooterView = UIView()
+        
+        // Настройка серчконтроллера
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredPatches.count
+        }
         return patches.isEmpty ? 0 : patches.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CommutationCell
-
-        let patch = patches[indexPath.row]
+        
+        var patch = Patch()
+        
+        if isFiltering {
+            patch = filteredPatches[indexPath.row]
+        } else {
+            patch = patches[indexPath.row]
+        }
         
         cell.numberLabel.text = "#\(indexPath.row + 1)"
         cell.designationLabel.text = patch.designation
@@ -117,7 +143,12 @@ class CommutationVC: UITableViewController {
         
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let patch = patches[indexPath.row]
+            var patch = Patch()
+            if isFiltering {
+                patch = filteredPatches[indexPath.row]
+            } else {
+                patch = patches[indexPath.row]
+            }
             let newPatchVC = segue.destination as! NewPatchVC
             newPatchVC.currentPatch = patch
         }
@@ -128,6 +159,20 @@ class CommutationVC: UITableViewController {
         
         guard let newPatchVC = segue.source as? NewPatchVC else { return }
         newPatchVC.savePatch()
+        tableView.reloadData()
+    }
+}
+
+extension CommutationVC: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        
+        filteredPatches = patches.filter("number CONTAINS[c] %@ OR designation CONTAINS[c] %@ OR sourceCabinet CONTAINS[c] %@ OR sourceEquipment CONTAINS[c] %@ OR sourcePort CONTAINS[c] %@ OR destinationCabinet CONTAINS[c] %@ OR destinationEquipment CONTAINS[c] %@ OR destinationPort CONTAINS[c] %@", searchText, searchText, searchText, searchText, searchText, searchText, searchText, searchText)
+        
         tableView.reloadData()
     }
 }

@@ -9,45 +9,57 @@ import UIKit
 
 class ConverterVC: UIViewController {
     
-    var convertMode = false
+    var method: ConvertMethod = .ft
+    var firstValue: Int = 1 {
+        didSet {
+            firstLabel.text = firstValue.description + " " + (method == .ft ? "ft" : "m")
+        }
+    }
+    
+    var secondValue: Double = 0.3 {
+        didSet {
+            secondLabel.text = secondValue.description + " " + (method == .ft ? "m" : "ft")
+        }
+    }
 
-    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var pickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        firstLabel.text = "1 ft"
-        secondLabel.text = "0.3 m"
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        convert()
     }
     
-    // Метод конвертации
+    // convertation
     func convert() {
+                
+        var coef = 0.3048
         
-        if convertMode {
-            let value = pickerView.selectedRow(inComponent: 1) + 1
-            let convertedResult = round(Double(value) * 3.28084 * 100) / 100
-            firstLabel.text = "\(value) m"
-            secondLabel.text = "\(convertedResult) ft"
-        } else {
-            let value = pickerView.selectedRow(inComponent: 1) + 1
-            let convertedResult = round(Double(value) * 0.3048 * 100) / 100
-            firstLabel.text = "\(value) ft"
-            secondLabel.text = "\(convertedResult) m"
+        switch method {
+        case .ft:
+            coef = 0.3048
+        case .m:
+            coef = 3.28084
         }
+        
+        let value = pickerView.selectedRow(inComponent: 1) + 1
+        let convertedResult = round(Double(value) * coef * 100) / 100
+        
+        firstValue = value
+        secondValue = convertedResult
     }
-
 }
 
 extension ConverterVC: UIPickerViewDataSource, UIPickerViewDelegate {
     
-    // Количество компонентов
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
     
-    // Количество значений для каждого компонента
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
             return 2
@@ -56,7 +68,6 @@ extension ConverterVC: UIPickerViewDataSource, UIPickerViewDelegate {
         }
     }
     
-    // Назначение имен для значений
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
             if row == 0 {
@@ -69,19 +80,19 @@ extension ConverterVC: UIPickerViewDataSource, UIPickerViewDelegate {
         }
     }
 
-    
-    // Настройка действий при выборе значения
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        // Переключение режима конвертации
         if component == 0 && row == 0 {
-            convertMode = false
+            method = .ft
         } else if component == 0 && row == 1 {
-            convertMode = true
+            method = .m
         }
         
-        // Конвертация
         convert()
     }
-    
+}
+
+enum ConvertMethod {
+    case ft
+    case m
 }

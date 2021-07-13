@@ -9,16 +9,37 @@ import UIKit
 
 class ConverterVC: UIViewController {
     
-    var method: ConvertMethod = .ft
-    var firstValue: Int = 1 {
+//    let scrollView: UIScrollView = {
+//        let scrollView = UIScrollView()
+//        return scrollView
+//    }()
+//    let pageControl: UIPageControl = {
+//        let pageControl = UIPageControl()
+//        pageControl.numberOfPages = 3
+//        pageControl.backgroundColor = .systemBackground
+//        pageControl.pageIndicatorTintColor = .lightGray
+//        pageControl.currentPageIndicatorTintColor = .black
+//        return pageControl
+//    }()
+//    let label: UILabel = {
+//        let label = UILabel()
+//        label.text = "1 FT"
+//        label.font = UIFont.systemFont(ofSize: 50)
+//        label.textAlignment = .center
+//        label.backgroundColor = .green
+//        return label
+//    }()
+    
+    fileprivate var method: ConvertMethod = .ft
+    fileprivate var firstValue: Int = 1 {
         didSet {
-            firstLabel.text = firstValue.description + " " + (method == .ft ? "ft" : "m")
+            firstLabel.text = "\(firstValue) " + (method == .ft ? "ft" : "m")
         }
     }
     
-    var secondValue: Double = 0.3 {
+    fileprivate var secondValue: Double = 0.3 {
         didSet {
-            secondLabel.text = secondValue.description + " " + (method == .ft ? "m" : "ft")
+            secondLabel.text = "\(secondValue) " + (method == .ft ? "m" : "ft")
         }
     }
 
@@ -29,13 +50,70 @@ class ConverterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        view.addSubview(scrollView)
+//        view.addSubview(pageControl)
+        
+//        scrollView.delegate = self
         pickerView.dataSource = self
         pickerView.delegate = self
+        
+//        pageControl.addTarget(self, action: #selector(pageControlDidChange(_:)), for: .valueChanged)
         convert()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        convert()
+    }
+    
+//    override func viewDidLayoutSubviews() {
+//
+//        scrollView.frame = CGRect(x: 0,
+//                                  y: view.safeAreaInsets.top,
+//                                  width: view.frame.size.width,
+//                                  height: view.safeAreaLayoutGuide.layoutFrame.size.height)
+//
+//        pageControl.frame = CGRect(x: view.frame.size.width / 2 - 61,
+//                                   y: view.frame.size.height - view.safeAreaInsets.bottom,
+//                                   width: 122,
+//                                   height: -40)
+//
+//        configureScrollView()
+//
+//    }
+    
+//    @objc func pageControlDidChange(_ sender: UIPageControl) {
+//
+//        let currentPage = sender.currentPage
+//        scrollView.setContentOffset(CGPoint(x: view.frame.size.width * CGFloat(currentPage),
+//                                            y: 0),
+//                                    animated: true)
+//    }
+
+//    private func configureScrollView() {
+//        let pageCount = 3
+//        scrollView.contentSize = CGSize(width: view.frame.size.width * CGFloat(pageCount),
+//                                        height: scrollView.frame.size.height)
+//        scrollView.isPagingEnabled = true
+//        let colors: [UIColor] = [
+//            .yellow,
+//            .blue,
+//            .brown
+//        ]
+//        for i in 0..<pageCount {
+//            let page = UIView(frame: CGRect(x: CGFloat(i) * view.frame.size.width,
+//                                            y: 0,
+//                                            width: view.frame.size.width,
+//                                            height: scrollView.frame.size.height))
+//            page.backgroundColor = colors[i]
+//            scrollView.addSubview(page)
+//        }
+//        let label = self.label
+//        label.frame = CGRect(x: view.frame.size.width / 2 - 100, y: 50, width: 200, height: 100)
+//        scrollView.addSubview(label)
+//    }
+    
     // convertation
-    func convert() {
+    fileprivate func convert() {
                 
         var coef = 0.3048
         
@@ -93,6 +171,11 @@ extension ConverterVC: UIPickerViewDataSource, UIPickerViewDelegate {
 }
 
 enum ConvertMethod {
-    case ft
-    case m
+    case ft, m
 }
+
+//extension ConverterVC: UIScrollViewDelegate {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        pageControl.currentPage = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
+//    }
+//}
